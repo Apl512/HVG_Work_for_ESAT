@@ -3,128 +3,108 @@
   <head>
     <meta charset="UTF-8">
     <meta name="description" content="historia y desarrollo del videojuego final fantasy 6">
-    <meta name="keywords" content="enciclopedia,wiki,fandom,historia,finalfantasy,ff6">
+    <meta name="keywords" content="enciclopedia,wiki,fandom,historia,finalfantasy,ff6,nintendo,history,games">
     <meta name="author" content="Adam Puche Lioubavina">
     <link rel="icon" type="image/png" href="IMG/favicon.png">
-    <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
     <title> .:FINAL FANTASY VI:. </title>
     <style>
       /* Neutral Labels */
       @font-face {
-        font-family: Dreamate;
-        src: url("fonts/Dreamate.ttf");
+        font-family: Final Fantasy;
+        src: url("fonts/ferrum.otf");
       }
-
       * {
         box-sizing: border-box;
       }
       body {
         width: 100%;
         height: 100%;
-        font-family: Dreamate, impact;
-        font-size: 22px;
+        font-family: Final Fantasy, impact;
+        font-size: 16px;
       }
       /* Style the  LISTS */
-      .menulist{
-        display: inline;
-        border: 2px solid black;
-        border-radius: 10px 0px;
-        width: 100px;
-        height: 100px;
-        margin: 10px;
-        padding: 15px;
-        background-color: black;
-        color: white;
-        font-size: 10px;
-        text-align: justify;
-      }
-      ol li a {
-        color: white;
-        text-decoration: none;
-      }
-      ol li a:hover {
-        color: red;
-        text-decoration: none;
-      }
-      /* Style the GRID */
-      .grid-container {
-        height: 100%;
-        width: 100%;
-        display: grid;
-        /*
-        grid-template-areas: 
-        'header header header header header header'
-        'menu menu menu menu menu menu'
-        'main main main main main main'
-        'footer footer footer footer footer footer'  
-        */ 
-        grid-template-rows: 1fr 0.5fr 5fr 1fr;
-      }
+      
+      
+      /* Style the FLEX */
       .header {
-        grid-area:;
-        background-color: black;
-        color: red;
-        padding: 20px;
-        text-align: center;
-        font-size: 20px;
+        height:150px;
+        padding: 10px;
+        font-size: 30px;
+        display: flex;
+        justify-content: center;
+        background-image: url("img/ff2.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        color: darkred;
+        text-shadow: 3px  0px 0px black,
+                     0px  3px 0px black,
+                    -3px  0px 0px black,
+                     0px -3px 0px black;
       }
       .menu {
-        grid-area: ;
-        background-color: red;
-        text-align: center;
+        height: 50px;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-end;
+        font-size: 20px;
+        background-color: darkred;
+        color: black;
       }
-      .main {
-        background-color: lightcyan;
-        padding: 10px;
-        width:;
-        height:;
+      .navigation {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-end;
+        background-color: darkred;
+      }
+      .navigation a {
+        text-decoration: none;
+        display: block;
+        padding: 1em;
+        color: white;
+      }
+      .navigation a:hover {
+        background-color:black;
+        color:white;
       }
       .footer {
-        grid-area: ;
-        background-color: black;
-        color: white;
-        padding: 20px;
+        clear: both;
+        padding: 16px;
         text-align: center;
-        font-size: 10px;
+        color: white;
+        background-color: black;
       }
       .linkcv {
         text-decoration:;
         color: white;
       }
       @media only screen and (max-width: 480px) {
-        .grid-container {
-          grid-template-rows: 0.5fr 0.1fr 4fr 1fr;
-        }
-        .menulist {
-          display: inline-block;
+        .header {
+          font-size: 25px;  
         }
       }
     </style>
   </head>
   <body>
     <!-- Se necesita el favicon -->
-     <div class="grid-container">
-      <div class="header">
-        <h2>Final Fantasy VI</h2>
-      </div>
-      <div class="menu">
-        <ol>
-          <li class="menulist"><a href=""> menu 1 </a></li>
-          <li class="menulist"><a href=""> menu 2 </a></li>
-          <li class="menulist"><a href=""> menu 3 </a></li>
-          <li class="menulist"><a href=""> menu 4 </a></li>
-        </ol>
-      </div>
-      <div class="main">
-        <h2>MY PAGE</h2>
-      </div>
-      <div class="footer"> 
-        <h2> ESAT </h2>
-        <h3>educational page for school</h3>
-        <!-- This button will be the link to my cv -->
-        <!-- I will change it for put a button that I thinks is great with the page--> 
-        <a href="CV/apl_cv.htm" class="linkcv" target="_blanck"><i>AdamPucheLioubavina</i></a>
-      </div>
-     </div>
+    <div class="header">
+      <h2>FINAL FANTASY VI</h2>
+    </div>
+    <div class="navigation">
+        <div><a href="#"> characters </a></div>
+        <div><a href="#"> history </a></div>
+        <div><a href="#"> enemies </a></div>
+        <div><a href="#"> mode 7 </a></div>
+    </div>
+    <div class="">
+      <h2>MY PAGE</h2>
+    </div>
+    <div class="footer"> 
+      <h2> ESAT </h2>
+      <h3>educational page for school</h3>
+      <!-- This button will be the link to my cv -->
+      <!-- I will change it for put a button that I thinks is great with the page--> 
+      <a href="CV/apl_cv.htm" class="linkcv" target="_blanck"><i>AdamPucheLioubavina</i></a>
+    </div>
   </body>
 </html>
