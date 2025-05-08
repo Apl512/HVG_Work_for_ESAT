@@ -1,178 +1,178 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Historia y desarrollo del videojuego Final Fantasy VI">
-    <meta name="keywords" content="enciclopedia, wiki, fandom, historia, final fantasy, ff6, nintendo, history, games">
-    <meta name="author" content="Adam Puche Lioubavina">
-    <link rel="icon" type="image/png" href="IMG/favicon.png">
-    <title>.: FINAL FANTASY VI :.</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="Historia y desarrollo del videojuego Final Fantasy VI">
+  <meta name="keywords" content="enciclopedia, wiki, fandom, historia, final fantasy, ff6, nintendo, history, games">
+  <meta name="author" content="Adam Puche Lioubavina">
+  <link rel="icon" type="image/png" href="IMG/favicon.png">
+  <title>.: FINAL FANTASY VI :.</title>
 
-    <style>
-        /* Fuente personalizada */
-        @font-face {
-            font-family: Final Fantasy;
-            src: url("fonts/ferrum.otf");
-        }
+  <style>
+    /* Fuente personalizada */
+    @font-face {
+      font-family: Final Fantasy;
+      src: url("fonts/ferrum.otf");
+    }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        body {
-            width: 100%;
-            height: 100%;
-            font-family: Final Fantasy, impact;
-            font-size: 16px;
-        }
+    body {
+      width: 100%;
+      height: 100%;
+      font-family: Final Fantasy, impact;
+      font-size: 16px;
+    }
 
-        /* Estilos del HEADER */
-        .header {
-            height: 150px;
-            padding: 10px;
-            font-size: 30px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-image: url("img/ff2.jpg");
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-            color: darkred;
-            text-shadow: 3px 0px 0px black,
-                         0px 3px 0px black,
-                        -3px 0px 0px black,
-                         0px -3px 0px black;
-        }
+    /* Estilos del HEADER */
+    .header {
+      height: 150px;
+      padding: 10px;
+      font-size: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url("img/ff2.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      color: darkred;
+      text-shadow: 3px 0px 0px black,
+                    0px 3px 0px black,
+                  -3px 0px 0px black,
+                    0px -3px 0px black;
+    }
 
-        /* Estilos del MENU */
-        .navigation {
-            background-color: darkred;
-            display: flex;
-            justify-content: flex-end;
-            padding: 10px;
-            position: relative;
-        }
+    /* Estilos del MENU */
+    .navigation {
+      background-color: darkred;
+      display: flex;
+      justify-content: flex-end;
+      padding: 10px;
+      position: relative;
+    }
 
-        .menu {
-            list-style: none;
-            display: flex;
-        }
+    .menu {
+      list-style: none;
+      display: flex;
+  }
 
-        .menu li {
-            margin: 0 10px;
-        }
+    .menu li {
+      margin: 0 10px;
+    }
 
-        .menu a {
-            text-decoration: none;
-            color: white;
-            padding: 1em;
-            display: block;
-        }
+    .menu a {
+      text-decoration: none;
+      color: white;
+      padding: 1em;
+      display: block;
+    }
 
-        .menu a:hover {
-            background-color: black;
-            color: white;
-        }
+    .menu a:hover {
+      background-color: black;
+      color: white;
+    }
 
-        /* Botón del menú hamburguesa */
-        .menu-toggle {
-            display: none;
-            cursor: pointer;
-            font-size: 24px;
-            color: white;
-            background: none;
-            border: none;
-        }
+    /* Botón del menú hamburguesa */
+    .menu-toggle {
+      display: none;
+      cursor: pointer;
+      font-size: 24px;
+      color: white;
+      background: none;
+      border: none;
+    }
 
-        /* FOOTER */
-        .footer {
-            clear: both;
-            padding: 16px;
-            text-align: center;
-            color: white;
-            background-color: black;
-        }
+    /* FOOTER */
+    .footer {
+      clear: both;
+      padding: 16px;
+      text-align: center;
+      color: white;
+      background-color: black;
+    }
 
-        /* Responsividad */
-        @media (max-width: 480px) {
-            .header {
-                font-size: 25px;  
-            }
+    /* Responsividad */
+    @media (max-width: 480px) {
+      .header {
+        font-size: 25px;  
+      }
 
-            .navigation {
-                flex-direction: column;
-                align-items: center;
-            }
+      .navigation {
+        flex-direction: column;
+        align-items: center;
+      }
 
-            .menu {
-                display: none;
-                flex-direction: column;
-                background: #444;
-                padding: 10px;
-                position: absolute;
-                top: 100%; /* Hace que el menú se despliegue hacia abajo */
-                left: 0;
-                width: 100%;
-                text-align: center;
-                z-index: 1000;
-                border-top: 2px solid darkred;
-            }
+      .menu {
+        display: none;
+        flex-direction: column;
+        background: #444;
+        padding: 10px;
+        position: absolute;
+        top: 100%; /* Hace que el menú se despliegue hacia abajo */
+        left: 0;
+        width: 100%;
+        text-align: center;
+        z-index: 1000;
+        border-top: 2px solid darkred;
+      }
 
-            .menu li {
-                margin: 5px 0;
-            }
+      .menu li {
+        margin: 5px 0;
+      }
 
-            .menu-toggle {
-                display: block;
-                padding: 10px;
-            }
+      .menu-toggle {
+        display: block;
+        padding: 10px;
+      }
 
-            .menu.active {
-                display: flex;
-            }
-        }
-    </style>
+      .menu.active {
+        display: flex;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <div class="header">
-        <h2>FINAL FANTASY VI</h2>
-    </div>
+  <div class="header">
+    <h2>FINAL FANTASY VI</h2>
+  </div>
 
-    <nav class="navigation">
-        <button class="menu-toggle">&#9776;</button>
-        <ul class="menu">
-            <li><a href="#hist">History</a></li>
-            <li><a href="#char">Characters</a></li>
-            <li><a href="#ene">Enemies</a></li>
-            <li><a href="#mode7">Mode 7</a></li>
-        </ul>
-    </nav>
+  <nav class="navigation">
+    <button class="menu-toggle">&#9776;</button>
+    <ul class="menu">
+      <li><a href="#hist">History</a></li>
+      <li><a href="#char">Characters</a></li>
+      <li><a href="#ene">Enemies</a></li>
+      <li><a href="#mode7">Mode 7</a></li>
+    </ul>
+  </nav>
 
-    <div>
-        <h2>WHAT IS FINAL FANTASY</h2>
-        <p>Final Fantasy is a video game that was developed by Square. The first Final Fantasy launched on December 18th, 1987.</p>
-    </div>
+  <div>
+    <h2>WHAT IS FINAL FANTASY</h2>
+    <p>Final Fantasy is a video game that was developed by Square. The first Final Fantasy launched on December 18th, 1987.</p>
+  </div>
 
-    <div class="footer"> 
-        <h2>ESAT</h2>
-        <h3>Educational page made for school</h3>
-        <a href="CV/apl_cv.htm" class="linkcv" target="_blank" title="MyCV"><i>Adam Puche Lioubavina</i></a>
-    </div>
+  <div class="footer"> 
+    <h2>ESAT</h2>
+    <h3>Educational page made for school</h3>
+    <a href="CV/apl_cv.htm" class="linkcv" target="_blank" title="MyCV"><i>Adam Puche Lioubavina</i></a>
+  </div>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const menuToggle = document.querySelector('.menu-toggle');
-            const menu = document.querySelector('.menu');
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const menuToggle = document.querySelector('.menu-toggle');
+      const menu = document.querySelector('.menu');
 
-            menuToggle.addEventListener('click', function() {
-                menu.classList.toggle('active');
-            });
-        });
-    </script>
+      menuToggle.addEventListener('click', function() {
+        menu.classList.toggle('active');
+      });
+    });
+  </script>
 
 </body>
 </html>
