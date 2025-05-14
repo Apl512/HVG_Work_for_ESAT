@@ -6,7 +6,7 @@
   <meta name="keywords" content="enciclopedia, wiki, fandom, historia, final fantasy, ff6, nintendo, history, games">
   <meta name="author" content="Adam Puche Lioubavina">
   <link rel="icon" type="image/png" href="IMG/favicon.png">
-  <title>.: FINAL FANTASY VI :.</title>
+  <title>FINAL FANTASY VI</title>
 
   <style>
     /* Fuente personalizada */
@@ -59,7 +59,7 @@
     .menu {
       list-style: none;
       display: flex;
-  }
+    }
 
     .menu li {
       margin: 0 10px;
@@ -96,6 +96,21 @@
       background-color: black;
     }
 
+    /* Botón Ir Arriba */
+    #botonArriba {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: red;
+      color: black;
+      border: none;
+      padding: 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 24px;
+      display: none;
+    }
+
     /* Responsividad */
     @media (max-width: 480px) {
       .header {
@@ -113,7 +128,7 @@
         background: #444;
         padding: 10px;
         position: absolute;
-        top: 100%; /* Hace que el menú se despliegue hacia abajo */
+        top: 100%;
         left: 0;
         width: 100%;
         text-align: center;
@@ -135,12 +150,6 @@
       }
     }
   </style>
-  <script>
-    function OpenGame() {
-      var ventanaJuego;
-      ventanaJuego.open("...");
-    }
-  </script>
 </head>
 <body>
 
@@ -160,8 +169,24 @@
 
   <div>
     <h2>WHAT IS FINAL FANTASY</h2>
-    <p>Final Fantasy is a video game that was developed by Square. The first Final Fantasy launched on December 18th, 1987.</p>
+    <p>
+      Final Fantasy is a video game that was developed by Square. 
+      The first Final Fantasy launched on December 18th, 1987.
+      <br><br>
+      Final Fantasy VI is a legendary RPG released in 1994 for the Super 
+      Nintendo Entertainment System (SNES). The game is set in a world 
+      where magic was thought to be extinct, replaced by powerful technology.
+      However, the discovery of magical beings called Espers ignites a conflict
+      between an oppressive empire and a group of rebels. Players follow an 
+      ensemble cast of heroes, each with unique abilities, as they battle against 
+      the empires sinister plans.
+      <br>
+      With an emotional story, a beloved cast of characters, and a phenomenal soundtrack by 
+      Nobuo Uematsu, Final Fantasy VI is considered one of the greatest RPGs of all time.
+    </p>
   </div>
+
+  <button id="botonArriba">▲</button>
 
   <div class="footer"> 
     <h2>ESAT</h2>
@@ -176,6 +201,20 @@
 
       menuToggle.addEventListener('click', function() {
         menu.classList.toggle('active');
+      });
+
+      let botonArriba = document.getElementById("botonArriba");
+
+      window.onscroll = function() {
+        if (document.documentElement.scrollTop > 100) {
+          botonArriba.style.display = "block";
+        } else {
+          botonArriba.style.display = "none";
+        }
+      };
+
+      botonArriba.addEventListener("click", function() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
       });
     });
   </script>
