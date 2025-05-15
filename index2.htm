@@ -26,13 +26,22 @@
       height: 100%;
       font-family: Final Fantasy, impact;
       font-size: 16px;
+      background-image: url("img/fondo.jpg");
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
     }
 
     div {
       padding: 20px;
     }
 
-    /* Estilos del HEADER */
+    /* Animación de fade-in */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
     .header {
       height: 150px;
       padding: 10px;
@@ -45,10 +54,8 @@
       background-position: center;
       background-size: cover;
       color: darkred;
-      text-shadow: 3px 0px 0px black,
-                    0px 3px 0px black,
-                  -3px 0px 0px black,
-                    0px -3px 0px black;
+      text-shadow: 3px 0px 0px black, 0px 3px 0px black, -3px 0px 0px black, 0px -3px 0px black;
+      animation: fadeIn 1.5s ease-in-out;
     }
 
     /* Estilos del MENU */
@@ -74,14 +81,16 @@
       color: white;
       padding: 1em;
       display: block;
+      transition: all 0.3s ease-in-out;
     }
 
     .menu a:hover {
       background-color: black;
       color: white;
+      transform: scale(1.1);
     }
 
-    /* Boton del menu hamburguesa */
+    /* Botón del menú hamburguesa */
     .menu-toggle {
       display: none;
       cursor: pointer;
@@ -115,10 +124,28 @@
       display: none;
     }
 
+    /* Galería */
+    .gallery {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .gallery img {
+      width: 150px;
+      height: auto;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.2);
+    }
+
     /* Responsividad */
     @media (max-width: 480px) {
       .header {
-        font-size: 25px;  
+        font-size: 25px;
       }
 
       .navigation {
@@ -172,129 +199,56 @@
   </nav>
 
   <div>
-    <h2>WHAT IS FINAL FANTASY</h2> <br>
+    <h2>WHAT IS FINAL FANTASY</h2>
     <p>
-      Final Fantasy is a video game that was developed by Square. 
+      Final Fantasy is a video game that was developed by Square.
       The first Final Fantasy launched on December 18th, 1987.
-      <br><br>
-      Final Fantasy VI is a legendary RPG released in 1994 for the Super 
-      Nintendo Entertainment System (SNES). The game is set in a world 
-      where magic was thought to be extinct, replaced by powerful technology.
-      However, the discovery of magical beings called Espers ignites a conflict
-      between an oppressive empire and a group of rebels. Players follow an 
-      ensemble cast of heroes, each with unique abilities, as they battle against 
-      the empires sinister plans.
-      <br>
-      With an emotional story, a beloved cast of characters, and a phenomenal soundtrack by 
-      Nobuo Uematsu, Final Fantasy VI is considered one of the greatest RPGs of all time.
+      Final Fantasy VI is a legendary RPG released in 1994 for the SNES.
+      The game is set in a world where magic was thought to be extinct,
+      replaced by powerful technology. However, the discovery of magical
+      beings called Espers ignites a conflict between an oppressive empire
+      and a group of rebels. Players follow an ensemble cast of heroes,
+      each with unique abilities, as they battle against the empire's
+      sinister plans.
     </p>
   </div>
 
   <div>
-    <a name="hist"></a>
-    <h2> HISTORY </h2> <br>
+    <h2> HISTORY </h2>
     <p>
       Final Fantasy VI begins with three imperial soldiers piloting Magitek armor.
       Their mission is to investigate Narshe, where a mysterious frozen Esper was found.
       Among them is Terra Branford, a young woman with innate magical abilities.
       However, she is controlled by the Empire through a mind-control device.
     </p>
-    <br>
     <p>
       Upon reaching the Esper, Terra experiences a deep connection with it.
       This encounter causes her to break free from the Empire’s control.
       Her two companions, Biggs and Wedge, are annihilated in the magical burst.
       Terra collapses and is later rescued by Locke Cole, a treasure hunter.
     </p>
-    <br>
-    <p>
-      Locke, a member of the Returners an anti Imperial resistance decides to help Terra.
-      He brings her to Figaro Castle, ruled by King Edgar Roni Figaro.
-      Despite Edgar maintaining neutrality, he secretly opposes the Empire.
-      Imperial General Kefka arrives, attempting to recapture Terra.
-    </p>
-    <br>
-    <p>
-      Edgar aids Terra and Locke in escaping by submerging his castle into the desert.
-      The group flees into the mountains, where they meet Edgar’s brother, Sabin.
-      Sabin is engaged in battle with the bandit monk Vargas, whom he defeats.
-      With Sabin joining them, the heroes prepare to face the Empire’s growing threat.
-    </p>
-    <br>
-    <p>
-      The Returners regroup to investigate the frozen Esper in Narshe.
-      Meanwhile, the Empire invades South Figaro, forcing Locke to intervene.
-      The rest of the party travels via the Lete River but gets separated after a battle.
-      Each hero then embarks on their own journey back to Narshe.
-    </p>
-    <br>
-    <p>
-      Upon reuniting, Locke introduces Celes Chere, an Imperial general turned traitor.
-      Sabin arrives with Cyan Garamonde, a knight whose family was slaughtered by Kefka.
-      Alongside them is Gau, a wild boy from the Veldt.
-      The Returners prepare to defend the Esper from Imperial forces.
-    </p>
-    <br>
-    <p>
-      Terra approaches the Esper, triggering an uncontrollable transformation.
-      She flies away in terror, leading the heroes to search for her.
-      They find her in Zozo, where the Esper Ramuh explains her origins.
-      To understand her connection to magic, the team heads to the Empire’s capital, Vector.
-    </p>
-    <br>
-    <p>
-      Since access to Vector is restricted, they recruit Setzer Gabbiani for aerial travel.
-      Using his airship, the Blackjack, they infiltrate Vector and rescue several Espers.
-      Among them is Maduin, who reveals he is Terra’s father.
-      The Espers sacrifice themselves, becoming Magicite crystals to aid the heroes.
-    </p>
-    <br>
-    <p>
-      The Returners escape, but Kefka arrives, causing doubt about Celes’s loyalty.
-      To prove herself, she stays behind, covering the team’s retreat.
-      Back in Zozo, Terra embraces her hybrid nature as both human and Esper.
-      With renewed resolve, she leads the Returners in a final assault on the Empire.
-    </p>
   </div>
 
-  <div>
-    <a name="char"></a>
-    <h2>CHARACTERS</h2>
-    
+  <div class="gallery">
+    <img src="IMG/DissidiaTerra.jpg" alt="Terra Branford">
+    <img src="img/locke.jpg" alt="Locke Cole">
+    <img src="img/kefka.jpg" alt="Kefka Palazzo">
   </div>
+
+  <audio id="bgMusic" loop autoplay>
+    <source src="audio/terra_theme.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!--<button onclick="document.getElementById('bgMusic').play()">Play Music</button>-->
 
   <button id="botonArriba">▲</button>
 
-  <div class="footer"> 
+  <div class="footer">
     <h2>ESAT</h2>
     <h3>Educational page made for school</h3>
     <a href="CV/apl_cv.htm" class="linkcv" target="_blank" title="MyCV"><i>Adam Puche Lioubavina</i></a>
   </div>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const menuToggle = document.querySelector('.menu-toggle');
-      const menu = document.querySelector('.menu');
-
-      menuToggle.addEventListener('click', function() {
-        menu.classList.toggle('active');
-      });
-
-      let botonArriba = document.getElementById("botonArriba");
-
-      window.onscroll = function() {
-        if (document.documentElement.scrollTop > 100) {
-          botonArriba.style.display = "block";
-        } else {
-          botonArriba.style.display = "none";
-        }
-      };
-
-      botonArriba.addEventListener("click", function() {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      });
-    });
-  </script>
 
 </body>
 </html>
