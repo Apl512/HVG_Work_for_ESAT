@@ -115,31 +115,65 @@
       bottom: 20px;
       right: 20px;
       background-color: red;
-      color: black;
+      color: white;
       border: none;
       padding: 15px;
       border-radius: 50%;
       cursor: pointer;
       font-size: 24px;
-      display: none;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease-in-out;
+      display: none; /* Oculto por defecto */
+    }
+
+    #botonArriba:hover {
+      background-color: darkred;
+      transform: scale(1.2);
     }
 
     /* Galería */
+    .gallery-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
     .gallery {
       display: flex;
+      overflow: visible; /* Permite que las imágenes sobresalgan */
       justify-content: center;
-      gap: 20px;
+      width: 90%; /* Ajusta según el tamaño deseado */
+    }
+
+    .gallery a {
+      min-width: 100px;
+      transition: transform 0.5s ease;
     }
 
     .gallery img {
-      width: 150px;
+      width: 100px;
       height: auto;
       border-radius: 10px;
-      transition: transform 0.3s;
+      transition: transform 0.3s ease-in-out;
     }
 
     .gallery img:hover {
-      transform: scale(1.2);
+      transform: scale(1.5);
+    }
+
+    #prevBtn, #nextBtn {
+        background-color: darkred;
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        font-size: 24px;
+        transition: background 0.3s;
+    }
+
+    #prevBtn:hover, #nextBtn:hover {
+        background-color: black;
     }
 
     /* Responsividad */
@@ -229,10 +263,28 @@
     </p>
   </div>
 
-  <div class="gallery">
-    <img src="IMG/DissidiaTerra.jpg" alt="Terra Branford">
-    <img src="img/locke.jpg" alt="Locke Cole">
-    <img src="img/kefka.jpg" alt="Kefka Palazzo">
+  <div>
+    <h2>CHARACTERS</h2>
+    <div class="gallery-container">
+        <button id="prevBtn">◄</button>
+        <div class="gallery">
+            <a href="#" target="_blank"><img src="IMG/terraBranford.png" alt="Terra Branford" title="Terra Branford"></a>
+            <a href="#" target="_blank"><img src="IMG/lockeCole.png" alt="Locke Cole" title="Locke Cole"></a>
+            <a href="#" target="_blank"><img src="IMG/kefkaPalazzo.png" alt="Kefka Palazzo" title="Kefka Palazzo"></a>
+            <a href="#" target="_blank"><img src="IMG/kefkaPalazzo.png" alt="Kefka Palazzo" title="Kefka Palazzo"></a>
+            <a href="#" target="_blank"><img src="IMG/kefkaPalazzo.png" alt="Kefka Palazzo" title="Kefka Palazzo"></a>
+        </div>
+        <button id="nextBtn">►</button>
+    </div>
+</div>
+
+
+  <div>
+    <h2>ENEMIES</h2>
+  </div>
+
+  <div>
+    <h2>MODE 7</h2>
   </div>
 
   <audio id="bgMusic" loop autoplay>
@@ -249,6 +301,46 @@
     <h3>Educational page made for school</h3>
     <a href="CV/apl_cv.htm" class="linkcv" target="_blank" title="MyCV"><i>Adam Puche Lioubavina</i></a>
   </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const gallery = document.querySelector(".gallery");
+        const prevBtn = document.getElementById("prevBtn");
+        const nextBtn = document.getElementById("nextBtn");
+        let scrollAmount = 100; // Ajusta la cantidad de desplazamiento
+
+        nextBtn.addEventListener("click", () => {
+            gallery.scrollBy({ left: scrollAmount, behavior: "smooth" });
+        });
+
+        prevBtn.addEventListener("click", () => {
+            gallery.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+        });
+    });
+    document.addEventListener("DOMContentLoaded", function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.menu');
+
+      menuToggle.addEventListener('click', function() {
+        menu.classList.toggle('active');
+      });
+    });
+    document.addEventListener("DOMContentLoaded", function() {
+      let botonArriba = document.getElementById("botonArriba");
+
+      window.addEventListener("scroll", function() {
+        if (document.documentElement.scrollTop > 100) {
+          botonArriba.style.display = "block";
+        } else {
+          botonArriba.style.display = "none";
+        }
+      });
+
+      botonArriba.addEventListener("click", function() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    });
+  </script>
 
 </body>
 </html>
