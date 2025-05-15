@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="History and development of Final Fantasy VI video game">
+  <meta name="keywords" content="encyclopedia, wiki, fandom, history, final fantasy, ff6, snes, square enix">
+  <meta name="author" content="Adam Puche Lioubavina">
+  <link rel="icon" type="image/png" href="IMG/favicon.png">
+  <title>FINAL FANTASY VI</title>
+
+  <style>
+    /* Custom Font */
+    @font-face {
+      font-family: Final Fantasy;
+      src: url("fonts/ferrum.otf");
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 100%;
+      height: 100%;
+      font-family: Final Fantasy, Arial, sans-serif;
+      font-size: 16px;
+      background-image: url("img/fondo.jpg");
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      color: #e0e0e0;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+      color: #d4af37;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+
+    a {
+      color: #6b4b8a;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    a:hover {
+      color: #9b72cf;
+    }
+
+    div {
+      padding: 20px;
+      background-color: rgba(10, 10, 26, 0.85);
+      margin: 15px;
+      border-radius: 8px;
+      border: 1px solid #6b4b8a;
+      box-shadow: 0 0 15px rgba(107, 75, 138, 0.3);
+    }
+
+    /* Fade-in animation */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .header {
+      height: 180px;
+      padding: 10px;
+      font-size: 36px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url("img/ff2.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      color: #d4af37;
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+      animation: fadeIn 1.5s ease-in-out;
+      border-bottom: 3px solid #6b4b8a;
+    }
+
+    /* Navigation Menu */
+    .navigation {
+      background: linear-gradient(to right, #4a2d6b, #6b4b8a);
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+      top: 0;
+      position: sticky;
+      z-index: 100;
+    }
+
+    .menu {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+
+    .menu li {
+      margin: 0 15px;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: white;
+      padding: 12px 20px;
+      display: block;
+      transition: all 0.3s ease-in-out;
+      border-radius: 5px;
+      font-size: 18px;
+    }
+
+    .menu a:hover {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #d4af37;
+      transform: translateY(-3px);
+    }
+
+    /* Hamburger Menu Button */
+    .menu-toggle {
+      display: none;
+      cursor: pointer;
+      font-size: 24px;
+      color: white;
+      background: none;
+      border: none;
+      padding: 10px;
+    }
+
+    /* Footer */
+    .footer {
+      clear: both;
+      padding: 20px;
+      text-align: center;
+      color: white;
+      background: linear-gradient(to right, #1a1a3a, #0d0d21);
+      margin: 0;
+      border-radius: 0;
+      border: none;
+      border-top: 3px solid #6b4b8a;
+    }
+
+    /* Back to Top Button */
+    #botonArriba {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: linear-gradient(to bottom, #6b4b8a, #4a2d6b);
+      color: white;
+      border: none;
+      padding: 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 24px;
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+      transition: all 0.3s ease-in-out;
+      display: none;
+      z-index: 99;
+    }
+
+    #botonArriba:hover {
+      background: linear-gradient(to bottom, #9b72cf, #6b4b8a);
+      transform: scale(1.1);
+    }
+
+    /* Character Gallery */
+    .gallery-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      margin: 20px 0;
+    }
+
+    .gallery {
+      display: flex;
+      overflow: hidden;
+      justify-content: flex-start;
+      width: 85%;
+      padding: 10px;
+      scroll-behavior: smooth;
+    }
+
+    .gallery a {
+      min-width: 110px;
+      transition: transform 0.5s ease;
+      margin: 0 8px;
+    }
+
+    .gallery a img {
+      width: 110px;
+      height: 200px;
+      border-radius: 8px;
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+      border: 2px solid #6b4b8a;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .gallery img:hover {
+      transform: scale(1.15);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+      border-color: #d4af37;
+    }
+
+    #prevBtn, #nextBtn {
+      background: linear-gradient(to bottom, #6b4b8a, #4a2d6b);
+      color: white;
+      border: none;
+      padding: 12px 18px;
+      cursor: pointer;
+      font-size: 24px;
+      transition: all 0.3s;
+      border-radius: 5px;
+    }
+
+    #prevBtn:hover, #nextBtn:hover {
+      background: linear-gradient(to bottom, #9b72cf, #6b4b8a);
+      transform: translateY(-3px);
+    }
+
+    /* Play Button */
+    .buttonPlay {
+      background: linear-gradient(to bottom, #6b4b8a, #4a2d6b);
+      border: none;
+      color: white;
+      padding: 16px 32px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: all 0.3s ease-in-out;
+      font-size: 18px;
+      font-family: Final Fantasy, Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .buttonPlay:hover {
+      background: linear-gradient(to bottom, #9b72cf, #6b4b8a);
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Enhanced Popup Styles */
+    .popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      backdrop-filter: blur(3px);
+    }
+    
+    .popup-content {
+      background: linear-gradient(145deg, #1a1a3a 0%, #0d0d21 100%);
+      border: 2px solid #8a6bb4;
+      border-radius: 10px;
+      width: 70%;
+      padding: 0;
+      position: relative;
+      box-shadow: 0 5px 30px rgba(74, 45, 107, 0.6);
+      animation: fadeIn 0.3s ease-out;
+      color: #f0f0f0;
+      font-family: 'Arial', sans-serif;
+      max-height: 80vh;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+    
+    .popup-header {
+      background: linear-gradient(to right, #4a2d6b, #6b4b8a);
+      padding: 15px;
+      border-radius: 8px 8px 0 0;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+    
+    .close-btn {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      font-size: 22px;
+      color: #e0e0e0;
+      cursor: pointer;
+      transition: all 0.2s;
+      background: rgba(0,0,0,0.2);
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .close-btn:hover {
+      color: #ff6b6b;
+      background: rgba(0,0,0,0.4);
+      transform: rotate(90deg);
+    }
+    
+    .character-portrait {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      border: 3px solid #d4af37;
+      margin-right: 15px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+      object-fit: cover;
+    }
+    
+    .character-name {
+      font-size: 20px;
+      color: #f8e8b0;
+      margin: 0;
+      text-shadow: 1px 1px 3px #000;
+      letter-spacing: 0.5px;
+    }
+    
+    .character-class {
+      font-style: italic;
+      color: #c0b0e0;
+      margin: 3px 0 0;
+      font-size: 14px;
+      text-shadow: 1px 1px 2px #000;
+    }
+    
+    .popup-body {
+      padding: 15px;
+    }
+    
+    .info-section {
+      margin-bottom: 15px;
+      background: rgba(20, 15, 35, 0.4);
+      padding: 12px;
+      border-radius: 6px;
+      border-left: 3px solid #6b4b8a;
+    }
+    
+    .info-section h3 {
+      color: #d4af37;
+      margin: 0 0 8px 0;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .info-section h3:before {
+      content: "";
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      background: #6b4b8a;
+      margin-right: 8px;
+      border-radius: 2px;
+    }
+    
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    
+    .info-item {
+      margin-bottom: 6px;
+    }
+    
+    .info-item strong {
+      color: #c0b0e0;
+      font-weight: normal;
+      display: block;
+      font-size: 13px;
+    }
+    
+    .info-item span {
+      color: #f0f0f0;
+      font-size: 14px;
+    }
+    
+    .abilities-list {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 6px;
+    }
+    
+    .abilities-list li {
+      padding: 6px 8px;
+      background: rgba(107, 75, 138, 0.15);
+      border-radius: 4px;
+      position: relative;
+      padding-left: 24px;
+      font-size: 13px;
+      line-height: 1.3;
+      border-left: 2px solid #6b4b8a;
+    }
+    
+    .abilities-list li:before {
+      content: "✦";
+      color: #d4af37;
+      position: absolute;
+      left: 6px;
+      top: 6px;
+      font-size: 14px;
+    }
+    
+    .quote {
+      font-style: italic;
+      color: #b0a0d0;
+      text-align: center;
+      margin: 15px 0 5px;
+      padding: 10px;
+      border-radius: 5px;
+      background: linear-gradient(90deg, rgba(107,75,138,0.1), rgba(212,175,55,0.1));
+      font-size: 14px;
+      line-height: 1.5;
+      position: relative;
+    }
+    
+    .quote:before, .quote:after {
+      content: '"';
+      color: #d4af37;
+      font-size: 18px;
+    }
+
+    /* Enhanced Mode 7 Section */
+    .tech-feature {
+      display: flex;
+      margin-bottom: 20px;
+      background: rgba(30, 20, 50, 0.4);
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid #4a2d6b;
+    }
+    
+    .tech-image {
+      width: 120px;
+      background: #1a1a3a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+    }
+    
+    .tech-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+    
+    .tech-details {
+      flex: 1;
+      padding: 15px;
+    }
+    
+    .tech-details h3 {
+      color: #d4af37;
+      margin-top: 0;
+      border-bottom: 1px solid #6b4b8a;
+      padding-bottom: 5px;
+    }
+    
+    .tech-details p {
+      margin-bottom: 10px;
+    }
+    
+    .tech-details ul {
+      padding-left: 20px;
+    }
+    
+    .tech-details li {
+      margin-bottom: 5px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .header {
+        font-size: 28px;
+        height: 150px;
+      }
+      
+      .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      .menu li {
+        margin: 5px 10px;
+      }
+      
+      .menu a {
+        padding: 8px 15px;
+        font-size: 16px;
+      }
+      
+      .gallery a img {
+        width: 90px;
+        height: 160px;
+      }
+      
+      .popup-content {
+        width: 90%;
+      }
+      
+      .character-header {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .character-portrait {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+      
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .tech-feature {
+        flex-direction: column;
+      }
+      
+      .tech-image {
+        width: 100%;
+        padding: 15px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .header {
+        font-size: 24px;
+        height: 120px;
+      }
+
+      .navigation {
+        flex-direction: column;
+        align-items: center;
+        padding: 5px;
+      }
+
+      .menu {
+        display: none;
+        flex-direction: column;
+        background: rgba(26, 26, 58, 0.95);
+        padding: 10px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        border-top: 2px solid #6b4b8a;
+      }
+
+      .menu li {
+        margin: 8px 0;
+      }
+
+      .menu-toggle {
+        display: block;
+        padding: 10px;
+      }
+
+      .menu.active {
+        display: flex;
+      }
+      
+      .gallery-container {
+        gap: 5px;
+      }
+      
+      .gallery {
+        width: 80%;
+      }
+      
+      .gallery a img {
+        width: 80px;
+        height: 140px;
+      }
+      
+      .character-name {
+        font-size: 18px;
+      }
+      
+      .character-portrait {
+        width: 60px;
+        height: 60px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <audio id="miaudio" autoplay loop>
+    <source src="Audios/soundtruck.mp3" type="audio/mp3">
+  </audio>
+
+  <div class="header">
+    <h1>FINAL FANTASY VI</h1>
+  </div>
+
+  <nav class="navigation">
+    <button class="menu-toggle">&#9776;</button>
+    <ul class="menu">
+      <li><a href="#hist">HISTORY</a></li>
+      <li><a href="#char">CHARACTERS</a></li>
+      <li><a href="#ene">ENEMIES</a></li>
+      <li><a href="#mode7">MODE 7</a></li>
+      <li><a href="#game">GAMEPLAY</a></li>
+    </ul>
+  </nav>
+
+  <div>
+    <h2>WHAT IS FINAL FANTASY VI?</h2>
+    <p>
+      Final Fantasy VI is a landmark role-playing video game developed and published by Square (now Square Enix) in 1994 for the Super Nintendo Entertainment System. Set in a world where magic has vanished and technology dominates, the game follows an ensemble cast of characters as they rebel against an oppressive empire wielding newly rediscovered magical power.
+    </p>
+    <p>
+      Praised for its complex characters, mature storytelling, and innovative gameplay systems, Final Fantasy VI is often regarded as one of the greatest video games of all time. It features 14 playable characters - the most in any mainline Final Fantasy game - each with unique abilities and rich backstories.
+    </p>
+  </div>
+
+  <div>
+    <a name="hist"></a>
+    <h2>GAME HISTORY</h2>
+    <p>
+      The story begins in a world where magic has disappeared, replaced by Magitek technology powered by enslaved creatures called Espers. The Gestahlian Empire, under the command of Emperor Gestahl and his mad court mage Kefka Palazzo, seeks to conquer the world using this technology.
+    </p>
+    <p>
+      Players initially control Terra Branford, a young woman enslaved by the Empire with a mysterious connection to magic. After a mission goes awry, Terra joins a growing rebellion against the Empire. The story explores themes of identity, redemption, and the balance between magic and technology across two distinct world states.
+    </p>
+    <p>
+      The game was revolutionary for its time, featuring one of the first female protagonists in RPGs and a narrative that dealt with mature themes like suicide, genocide, and the nature of good and evil.
+    </p>
+  </div>
+
+  <div>
+    <a name="char"></a>
+    <h2>MAIN CHARACTERS</h2>
+    <div class="gallery-container">
+      <button id="prevBtn">◄</button>
+      <div class="gallery">
+        <a href="javascript:void(0)" class="character-link" data-character="terra"><img src="img/terra.png" alt="Terra Branford" title="Terra Branford"></a>
+        <a href="javascript:void(0)" class="character-link" data-character="locke"><img src="img/locke.png" alt="Locke Cole" title="Locke Cole"></a>
+        <a href="javascript:void(0)" class="character-link" data-character="edgar"><img src="img/edgar.png" alt="Edgar Figaro" title="Edgar Figaro"></a>
+        <a href="javascript:void(0)" class="character-link" data-character="sabin"><img src="img/sabin.png" alt="Sabin Figaro" title="Sabin Figaro"></a>
+        <a href="javascript:void(0)" class="character-link" data-character="shadow"><img src="img/Shadow.png" alt="Shadow" title="Shadow"></a>
+        <a href="javascript:void(0)" class="character-link" data-character="cyan"><img src="img/cyan.png" alt="Cyan Garamonde" title="Cyan Garamonde"></a>
+        <a href="javascript:void(0)" class="character-link" data-character="gau"><img src="img/gau.png" alt="Gau" title="Gau"></a>
+        <a href="javascript:void(0)" class="character-link" data-character="celes"><img src="img/celes.png" alt="Celes Chere" title="Celes Chere"></a>
+        <a href="javascript:void(0)" class="character-link" data-character="setzer"><img src="img/setzer.png" alt="Setzer Gabbiani" title="Setzer Gabbiani"></a>
+        <a href="javascript:void(0)" class="character-link" data-character="kefka"><img src="img/kefka.png" alt="Kefka Palazzo" title="Kefka Palazzo"></a>
+      </div>
+      <button id="nextBtn">►</button>
+    </div>
+  </div>
+
+  <div>
+    <a name="ene"></a>
+    <h2>NOTABLE ENEMIES</h2>
+    <p>
+      Final Fantasy VI features a diverse bestiary of enemies ranging from imperial soldiers to magical creatures and mechanical monstrosities. Some of the most memorable foes include:
+    </p>
+    <ul>
+      <li><strong>Magitek Armor</strong> - The Empire's mechanical battle suits</li>
+      <li><strong>Espers</strong> - Magical creatures with devastating powers</li>
+      <li><strong>Atma Weapon</strong> - A legendary monster from ancient times</li>
+      <li><strong>Ultros</strong> - A recurring comic relief enemy</li>
+      <li><strong>The Warring Triad</strong> - Three god-like statues that grant immense power</li>
+    </ul>
+  </div>
+
+  <div>
+    <a name="mode7"></a>
+    <h2>MODE 7 TECHNOLOGY</h2>
+    <p>
+      Final Fantasy VI made groundbreaking use of the SNES's Mode 7 graphics capability, which allowed for pseudo-3D effects by scaling and rotating background layers. This technology was revolutionary for 16-bit RPGs and helped create immersive environments.
+    </p>
+    
+    <div class="tech-feature">
+      <div class="tech-image">
+        <img src="img/mapaMode7.png" alt="Mode 7 Overworld">
+      </div>
+      <div class="tech-details">
+        <h3>Overworld Map</h3>
+        <p>The game's overworld used Mode 7 to create a dynamic, rotating map that gave players a true sense of exploration:</p>
+        <ul>
+          <li>Smooth zooming in/out effects when entering towns</li>
+          <li>Rotation when changing directions</li>
+          <li>Parallax scrolling for depth effects</li>
+          <li>Dynamic scaling of sprites based on position</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="tech-feature">
+      <div class="tech-image">
+        <img src="img/shipMode7.png" alt="Mode 7 Airship">
+      </div>
+      <div class="tech-details">
+        <h3>Airship Navigation</h3>
+        <p>The airship sequences showcased Mode 7's capabilities:</p>
+        <ul>
+          <li>True scaling effects as the airship "descended"</li>
+          <li>Rotating world map during flight</li>
+          <li>Dynamic shadow effects</li>
+          <li>Smooth transitions between flight and landing</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="tech-feature">
+      <div class="tech-image">
+        <img src="img/battleMode7.png" alt="Mode 7 Battle">
+      </div>
+      <div class="tech-details">
+        <h3>Battle Backgrounds</h3>
+        <p>Mode 7 enhanced battle scenes with:</p>
+        <ul>
+          <li>Rotating and scaling backgrounds</li>
+          <li>Parallax scrolling for depth</li>
+          <li>Special effects like the Floating Continent</li>
+          <li>Dynamic camera movements</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="tech-feature">
+      <div class="tech-image">
+        <img src="img/operaMode7.png" alt="Mode 7 Opera Scene">
+      </div>
+      <div class="tech-details">
+        <h3>Opera House Scene</h3>
+        <p>The famous opera sequence used Mode 7 for:</p>
+        <ul>
+          <li>Stage perspective effects</li>
+          <li>Dynamic background scrolling</li>
+          <li>Character movement across the stage</li>
+          <li>Special lighting effects</li>
+        </ul>
+      </div>
+    </div>
+    
+    <h3>Technical Limitations and Solutions</h3>
+    <p>The developers creatively worked around SNES limitations:</p>
+    <ul>
+      <li><strong>Memory Constraints:</strong> Used clever compression techniques for Mode 7 assets</li>
+      <li><strong>Processor Limits:</strong> Optimized calculations for smooth performance</li>
+      <li><strong>Color Palette:</strong> Combined Mode 7 with regular backgrounds for richer colors</li>
+      <li><strong>Sprite Limits:</strong> Carefully managed sprite usage during Mode 7 sequences</li>
+    </ul>
+  </div>
+
+  <div name="play">
+    <a name="game"></a>
+    <h2>GAMEPLAY FEATURES</h2>
+    <p>
+      Final Fantasy VI introduced several innovative gameplay mechanics:
+    </p>
+    <ul>
+      <li><strong>Diverse Party System</strong> - 14 playable characters with unique abilities</li>
+      <li><strong>Magicite System</strong> - Learn spells from magical stones</li>
+      <li><strong>Desperation Attacks</strong> - Special moves when near death</li>
+      <li><strong>Split Story Paths</strong> - Different character scenarios in World of Ruin</li>
+      <li><strong>Active Time Battle 2.0</strong> - Refined version of Square's ATB system</li>
+    </ul>
+    <center>
+      <button class="buttonPlay">PLAY NOW</button>
+    </center>
+  </div>
+
+  <!-- Character Popup -->
+  <div class="popup-overlay" id="popupOverlay">
+    <div class="popup-content">
+      <div class="popup-header">
+        <img src="img/terra.png" alt="Character Portrait" class="character-portrait" id="popupPortrait">
+        <div>
+          <h1 class="character-name" id="popupName">Character Name</h1>
+          <p class="character-class" id="popupClass">Character Class</p>
+        </div>
+        <span class="close-btn" id="closeBtn">&times;</span>
+      </div>
+      <div class="popup-body" id="popupContent">
+        <!-- Content will be filled dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <button id="botonArriba">▲</button>
+
+  <div class="footer">
+    <h2>FINAL FANTASY VI FAN PAGE</h2>
+    <h3>Educational project about the classic RPG</h3>
+    <a href="CV/apl_cv.htm" class="linkcv" target="_blank" title="MyCV"><i>Adam Puche Lioubavina</i></a>
+  </div>
+
+  <script>
+    // Scrollable gallery
+    document.addEventListener("DOMContentLoaded", function() {
+        const gallery = document.querySelector(".gallery");
+        const prevBtn = document.getElementById("prevBtn");
+        const nextBtn = document.getElementById("nextBtn");
+        let scrollAmount = 120;
+
+        nextBtn.addEventListener("click", () => {
+            gallery.scrollBy({ left: scrollAmount, behavior: "smooth" });
+        });
+
+        prevBtn.addEventListener("click", () => {
+            gallery.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+        });
+    });
+    
+    // Hamburger menu
+    document.addEventListener("DOMContentLoaded", function() {
+      const menuToggle = document.querySelector('.menu-toggle');
+      const menu = document.querySelector('.menu');
+
+      menuToggle.addEventListener('click', function() {
+        menu.classList.toggle('active');
+      });
+    });
+    
+    // Back to top button
+    document.addEventListener("DOMContentLoaded", function() {
+      let botonArriba = document.getElementById("botonArriba");
+
+      window.addEventListener("scroll", function() {
+        if (document.documentElement.scrollTop > 300) {
+          botonArriba.style.display = "block";
+        } else {
+          botonArriba.style.display = "none";
+        }
+      });
+
+      botonArriba.addEventListener("click", function() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    });
+
+    // Audio control
+    document.addEventListener("DOMContentLoaded", function() {
+      var audio = document.getElementById("miaudio");
+      audio.volume = 0.1;
+    });
+    
+    // Character popup system
+    document.addEventListener("DOMContentLoaded", function() {
+      const characterLinks = document.querySelectorAll('.character-link');
+      const popupOverlay = document.getElementById('popupOverlay');
+      const closeBtn = document.getElementById('closeBtn');
+      const popupContent = document.getElementById('popupContent');
+      const popupName = document.getElementById('popupName');
+      const popupClass = document.getElementById('popupClass');
+      const popupPortrait = document.getElementById('popupPortrait');
+      
+      // Character data
+      const characters = {
+        terra: {
+          name: "Terra Branford",
+          class: "Magic Warrior / Half-Esper",
+          portrait: "img/terra.png",
+          info: {
+            "Age": "18 years",
+            "Race": "Human/Esper hybrid",
+            "Affiliation": "Gestahl Empire / Returners"
+          },
+          stats: {
+            "HP": "3,500",
+            "MP": "500",
+            "Strength": "45",
+            "Magic": "90"
+          },
+          abilities: [
+            "Esper Transformation",
+            "Magic Mastery",
+            "Summon Espers",
+            "Runic (Magic Absorption)"
+          ],
+          equipment: [
+            "Mithril Blade",
+            "Chain Mail",
+            "Zona Seeker",
+            "Hermes Sandals"
+          ],
+          quote: "I'm not just some weapon of the Empire... I have my own feelings, my own thoughts."
+        },
+        locke: {
+          name: "Locke Cole",
+          class: "Treasure Hunter",
+          portrait: "img/locke.png",
+          info: {
+            "Age": "25 years",
+            "Race": "Human",
+            "Affiliation": "Returners"
+          },
+          stats: {
+            "HP": "3,200",
+            "MP": "150",
+            "Strength": "60",
+            "Magic": "30"
+          },
+          abilities: [
+            "Steal",
+            "Lockpicking",
+            "Dagger combat",
+            "Fast movement"
+          ],
+          equipment: [
+            "Valiant Knife",
+            "Mithril Vest",
+            "Gauntlet",
+            "Tintinabar"
+          ],
+          quote: "A treasure's not a treasure unless it's shared."
+        },
+        edgar: {
+          name: "Edgar Roni Figaro",
+          class: "King / Engineer",
+          portrait: "img/edgar.png",
+          info: {
+            "Age": "27 years",
+            "Race": "Human",
+            "Affiliation": "Figaro Kingdom / Returners"
+          },
+          stats: {
+            "HP": "3,400",
+            "MP": "200",
+            "Strength": "55",
+            "Magic": "40"
+          },
+          abilities: [
+            "Tools (AutoCrossbow, Chainsaw, etc.)",
+            "Military strategy",
+            "Diplomacy",
+            "Spear combat"
+          ],
+          equipment: [
+            "Partisan",
+            "Platinum Armor",
+            "Royal Crown",
+            "Running Shoes"
+          ],
+          quote: "A king must put his people before himself."
+        },
+        sabin: {
+          name: "Sabin Rene Figaro",
+          class: "Monk / Warrior",
+          portrait: "img/sabin.png",
+          info: {
+            "Age": "27 years",
+            "Race": "Human",
+            "Affiliation": "Returners"
+          },
+          stats: {
+            "HP": "4,000",
+            "MP": "100",
+            "Strength": "85",
+            "Magic": "20"
+          },
+          abilities: [
+            "Blitz techniques (AuraBolt, Razor Gale, etc.)",
+            "Superhuman strength",
+            "Physical endurance",
+            "Martial arts"
+          ],
+          equipment: [
+            "Tiger Fangs",
+            "Mithril Vest",
+            "Hyper Wrist",
+            "Sprint Shoes"
+          ],
+          quote: "Strength without control means nothing!"
+        },
+        shadow: {
+          name: "Shadow",
+          class: "Assassin / Mercenary",
+          portrait: "img/Shadow.png",
+          info: {
+            "Age": "Unknown",
+            "Race": "Human",
+            "Affiliation": "Mercenary"
+          },
+          stats: {
+            "HP": "3,300",
+            "MP": "180",
+            "Strength": "70",
+            "Magic": "35"
+          },
+          abilities: [
+            "Throw (Weapon throwing)",
+            "Intercept (Evade attacks)",
+            "Stealth movement",
+            "Short sword combat"
+          ],
+          equipment: [
+            "Shuriken",
+            "Ninja Gear",
+            "Thief Glove",
+            "Sprint Shoes"
+          ],
+          quote: "The past is past. Nothing else matters."
+        },
+        cyan: {
+          name: "Cyan Garamonde",
+          class: "Samurai / Knight",
+          portrait: "img/cyan.png",
+          info: {
+            "Age": "50 years",
+            "Race": "Human",
+            "Affiliation": "Doma Kingdom / Returners"
+          },
+          stats: {
+            "HP": "3,600",
+            "MP": "220",
+            "Strength": "65",
+            "Magic": "50"
+          },
+          abilities: [
+            "Bushido (Sword techniques)",
+            "Code of honor",
+            "Mental fortitude",
+            "Leadership"
+          ],
+          equipment: [
+            "Tempest",
+            "Samurai Suit",
+            "Genji Glove",
+            "Tabi"
+          ],
+          quote: "A samurai's honor is not so easily stained."
+        },
+        gau: {
+          name: "Gau",
+          class: "Wild Child",
+          portrait: "img/gau.png",
+          info: {
+            "Age": "13 years",
+            "Race": "Human",
+            "Affiliation": "Veldt / Returners"
+          },
+          stats: {
+            "HP": "3,800",
+            "MP": "10",
+            "Strength": "75",
+            "Magic": "5"
+          },
+          abilities: [
+            "Rage (Mimic monsters)",
+            "Animal agility",
+            "Heightened senses",
+            "Physical endurance"
+          ],
+          equipment: [
+            "Tiger Claw",
+            "Animal Hide",
+            "Talisman",
+            "Sprint Shoes"
+          ],
+          quote: "Uwaoo! Gau hungry! Gau eat now!"
+        },
+        celes: {
+          name: "Celes Chere",
+          class: "Magitek Knight / Opera Singer",
+          portrait: "img/celes.png",
+          info: {
+            "Age": "18 years",
+            "Race": "Human (Magitek enhanced)",
+            "Affiliation": "Gestahl Empire / Returners"
+          },
+          stats: {
+            "HP": "3,300",
+            "MP": "400",
+            "Strength": "50",
+            "Magic": "80"
+          },
+          abilities: [
+            "Runic (Magic absorption)",
+            "Sing (Magical effects)",
+            "Sword combat",
+            "Military strategy"
+          ],
+          equipment: [
+            "Rune Blade",
+            "Magitek Armor",
+            "Tiara",
+            "Cape"
+          ],
+          quote: "What's more important? Loyalty to a corrupt empire or loyalty to oneself?"
+        },
+        setzer: {
+          name: "Setzer Gabbiani",
+          class: "Gambler / Airship Pilot",
+          portrait: "img/setzer.png",
+          info: {
+            "Age": "35 years",
+            "Race": "Human",
+            "Affiliation": "None (joins Returners)"
+          },
+          stats: {
+            "HP": "3,100",
+            "MP": "250",
+            "Strength": "60",
+            "Magic": "45"
+          },
+          abilities: [
+            "Slots (Slot machine attacks)",
+            "Airship piloting",
+            "Gambling",
+            "Dart combat"
+          ],
+          equipment: [
+            "Darts",
+            "Leather Jacket",
+            "Goggles",
+            "Amulet"
+          ],
+          quote: "Life's a gamble. Why not bet on what you believe in?"
+        },
+        kefka: {
+          name: "Kefka Palazzo",
+          class: "Court Mage / God of Magic",
+          portrait: "img/kefka.png",
+          info: {
+            "Age": "35 years",
+            "Race": "Human (Magitek enhanced)",
+            "Affiliation": "Gestahl Empire / None (as god)"
+          },
+          stats: {
+            "HP": "50,000",
+            "MP": "999",
+            "Strength": "90",
+            "Magic": "99"
+          },
+          abilities: [
+            "Ultimate Magic",
+            "Trance (Divine form)",
+            "Manipulation",
+            "Destructive madness"
+          ],
+          equipment: [
+            "Angel Feather",
+            "Divine Robes",
+            "Crown of Chaos",
+            "Seraphim Wings"
+          ],
+          quote: "Destruction... destruction is what gives my life meaning!"
+        }
+      };
+
+      // Show popup when clicking character image
+      characterLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          
+          const characterId = this.getAttribute('data-character');
+          const character = characters[characterId];
+          
+          // Update popup header
+          popupName.textContent = character.name;
+          popupClass.textContent = character.class;
+          popupPortrait.src = character.portrait;
+          popupPortrait.alt = character.name;
+          
+          // Build popup content
+          let html = `
+            <div class="info-section">
+              <h3>Information</h3>
+              <div class="info-grid">`;
+                
+          // Add general info
+          for (const [key, value] of Object.entries(character.info)) {
+            html += `
+                <div class="info-item">
+                  <strong>${key}</strong>
+                  <span>${value}</span>
+                </div>`;
+          }
+          
+          html += `
+              </div>
+            </div>
+            
+            <div class="info-section">
+              <h3>Statistics</h3>
+              <div class="info-grid">`;
+                
+          // Add stats
+          for (const [key, value] of Object.entries(character.stats)) {
+            html += `
+                <div class="info-item">
+                  <strong>${key}</strong>
+                  <span>${value}</span>
+                </div>`;
+          }
+          
+          html += `
+              </div>
+            </div>
+            
+            <div class="info-section">
+              <h3>Abilities</h3>
+              <ul class="abilities-list">`;
+                
+          // Add abilities
+          character.abilities.forEach(ability => {
+            html += `<li>${ability}</li>`;
+          });
+          
+          html += `
+              </ul>
+            </div>
+            
+            <div class="info-section">
+              <h3>Equipment</h3>
+              <ul class="abilities-list">`;
+                
+          // Add equipment
+          character.equipment.forEach(item => {
+            html += `<li>${item}</li>`;
+          });
+          
+          html += `
+              </ul>
+            </div>
+            
+            <p class="quote">${character.quote}</p>`;
+          
+          popupContent.innerHTML = html;
+          popupOverlay.style.display = 'flex';
+          document.body.style.overflow = 'hidden';
+        });
+      });
+
+      // Close popup when clicking X
+      closeBtn.addEventListener('click', function() {
+        popupOverlay.style.display = 'none';
+        document.body.style.overflow = 'auto';
+      });
+
+      // Close popup when clicking outside content
+      popupOverlay.addEventListener('click', function(e) {
+        if (e.target === popupOverlay) {
+          popupOverlay.style.display = 'none';
+          document.body.style.overflow = 'auto';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
