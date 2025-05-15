@@ -1,169 +1,351 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="historia y desarrollo del videojuego final fantasy 6">
-    <meta name="keywords" content="enciclopedia,wiki,fandom,historia,finalfantasy,ff6,nintendo,history,games">
-    <meta name="author" content="Adam Puche Lioubavina">
-    <link rel="icon" type="image/png" href="IMG/favicon.png">
-    <title> .:FINAL FANTASY VI:. </title>
-    <style>
-      /* Neutral Labels */
-      @font-face {
-        font-family: Final Fantasy;
-        src: url("fonts/ferrum.otf");
-      }
-      * {
-        box-sizing: border-box;
-      }
-      body {
-        width: 100%;
-        height: 100%;
-        font-family: Final Fantasy, impact;
-        font-size: 16px;
-      }
-      /* Style the HEADER */
-      .header {
-        height:150px;
-        padding: 10px;
-        font-size: 30px;
-        display: flex;
-        justify-content: center;
-        background-image: url("img/ff2.jpg");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        color: darkred;
-        text-shadow: 3px  0px 0px black,
-                     0px  3px 0px black,
-                    -3px  0px 0px black,
-                     0px -3px 0px black;
-      }
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Historia y desarrollo del videojuego Final Fantasy VI">
+  <meta name="keywords" content="enciclopedia, wiki, fandom, historia, final fantasy, ff6, nintendo, history, games">
+  <meta name="author" content="Adam Puche Lioubavina">
+  <link rel="icon" type="image/png" href="IMG/favicon.png">
+  <title>FINAL FANTASY VI</title>
 
-      /* Style the MENU */
-      .navigation {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: flex-end;
+  <style>
+    /* Fuente personalizada */
+    @font-face {
+      font-family: Final Fantasy;
+      src: url("fonts/ferrum.otf");
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 100%;
+      height: 100%;
+      font-family: Final Fantasy, impact;
+      font-size: 16px;
+      background-image: url("img/fondo.jpg");
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+    }
+
+    div {
+      padding: 20px;
+    }
+
+    /* Animación de fade-in */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .header {
+      height: 150px;
+      padding: 10px;
+      font-size: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url("img/ff2.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      color: darkred;
+      text-shadow: 3px 0px 0px black, 0px 3px 0px black, -3px 0px 0px black, 0px -3px 0px black;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    /* Estilos del MENU */
+    .navigation {
+      background-color: darkred;
+      display: flex;
+      justify-content: flex-end;
+      padding: 10px;
+      position: relative;
+    }
+
+    .menu {
+      list-style: none;
+      display: flex;
+    }
+
+    .menu li {
+      margin: 0 10px;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: white;
+      padding: 1em;
+      display: block;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .menu a:hover {
+      background-color: black;
+      color: white;
+      transform: scale(1.1);
+    }
+
+    /* Botón del menú hamburguesa */
+    .menu-toggle {
+      display: none;
+      cursor: pointer;
+      font-size: 24px;
+      color: white;
+      background: none;
+      border: none;
+    }
+
+    /* FOOTER */
+    .footer {
+      clear: both;
+      padding: 16px;
+      text-align: center;
+      color: white;
+      background-color: black;
+    }
+
+    /* Botón Ir Arriba */
+    #botonArriba {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: red;
+      color: white;
+      border: none;
+      padding: 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 24px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease-in-out;
+      display: none; /* Oculto por defecto */
+    }
+
+    #botonArriba:hover {
+      background-color: darkred;
+      transform: scale(1.2);
+    }
+
+    /* Galería */
+    .gallery-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .gallery {
+      display: flex;
+      overflow: visible; /* Permite que las imágenes sobresalgan */
+      justify-content: center;
+      width: 90%; /* Ajusta según el tamaño deseado */
+    }
+
+    .gallery a {
+      min-width: 100px;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery img {
+      width: 100px;
+      height: 200px;
+      border-radius: 10px;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.5);
+    }
+
+    #prevBtn, #nextBtn {
         background-color: darkred;
-      }
-      .navigation a {
-        text-decoration: none;
-        display: block;
-        padding: 1em;
         color: white;
-      }
-      .navigation a:hover {
-        background-color:black;
-        color:white;
-      }
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        font-size: 24px;
+        transition: background 0.3s;
+    }
 
-      /* Style the FOOTER*/
-      .footer {
-        clear: both;
-        padding: 16px;
-        text-align: center;
-        color: white;
+    #prevBtn:hover, #nextBtn:hover {
         background-color: black;
+    }
+
+    /* Responsividad */
+    @media (max-width: 480px) {
+      .header {
+        font-size: 25px;
       }
 
-      /* Style of my CV */
-      .linkcv {
-        color: white;
+      .navigation {
+        flex-direction: column;
+        align-items: center;
       }
 
-      /* for @MEDIA */
-      @media only screen and (max-width: 480px) {
-        .header {
-          font-size: 25px;  
+      .menu {
+        display: none;
+        flex-direction: column;
+        background: #444;
+        padding: 10px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        z-index: 1000;
+        border-top: 2px solid darkred;
+      }
+
+      .menu li {
+        margin: 5px 0;
+      }
+
+      .menu-toggle {
+        display: block;
+        padding: 10px;
+      }
+
+      .menu.active {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h2>FINAL FANTASY VI</h2>
+  </div>
+
+  <nav class="navigation">
+    <button class="menu-toggle">&#9776;</button>
+    <ul class="menu">
+      <li><a href="#hist">HISTORY</a></li>
+      <li><a href="#char">CHARACTERS</a></li>
+      <li><a href="#ene">ENEMIES</a></li>
+      <li><a href="#mode7">MODE 7</a></li>
+    </ul>
+  </nav>
+
+  <div>
+    <h2>WHAT IS FINAL FANTASY</h2>
+    <p>
+      Final Fantasy is a video game that was developed by Square.
+      The first Final Fantasy launched on December 18th, 1987.
+      Final Fantasy VI is a legendary RPG released in 1994 for the SNES.
+      The game is set in a world where magic was thought to be extinct,
+      replaced by powerful technology. However, the discovery of magical
+      beings called Espers ignites a conflict between an oppressive empire
+      and a group of rebels. Players follow an ensemble cast of heroes,
+      each with unique abilities, as they battle against the empire's
+      sinister plans.
+    </p>
+  </div>
+
+  <div>
+    <a name="hist"></a>
+    <h2> HISTORY </h2>
+    <p>
+      Final Fantasy VI begins with three imperial soldiers piloting Magitek armor.
+      Their mission is to investigate Narshe, where a mysterious frozen Esper was found.
+      Among them is Terra Branford, a young woman with innate magical abilities.
+      However, she is controlled by the Empire through a mind-control device.
+    </p>
+    <p>
+      Upon reaching the Esper, Terra experiences a deep connection with it.
+      This encounter causes her to break free from the Empire’s control.
+      Her two companions, Biggs and Wedge, are annihilated in the magical burst.
+      Terra collapses and is later rescued by Locke Cole, a treasure hunter.
+    </p>
+  </div>
+
+  <div>
+    <a name="char"></a>
+    <h2>CHARACTERS</h2>
+    <div class="gallery-container">
+        <button id="prevBtn">◄</button>
+        <div class="gallery">
+            <a href="#" target="_blank"><img src="IMG/terraBranford.png" alt="Terra Branford" title="Terra Branford"></a>
+            <a href="#" target="_blank"><img src="IMG/lockeCole.png" alt="Locke Cole" title="Locke Cole"></a>
+            <a href="#" target="_blank"><img src="IMG/edgarFigaro.png" alt="Edgar Figaro" title="Edgar Figaro"></a>
+            <a href="#" target="_blank"><img src="IMG/sabinFigaro.png" alt="Sabin FIgaro" title="Sabin Figaro"></a>
+            <a href="#" target="_blank"><img src="IMG/Shadow.png" alt="Shadow" title="Shadow"></a>
+            <a href="#" target="_blank"><img src="IMG/kefkaPalazzo.png" alt="Kefka Palazzo" title="Kefka Palazzo"></a>
+        </div>
+        <button id="nextBtn">►</button>
+    </div>
+</div>
+
+
+  <div>
+    <a name="ene"></a>
+    <h2>ENEMIES</h2>
+  </div>
+
+  <div>
+    <a name="mode7"></a>
+    <h2>MODE 7</h2>
+  </div>
+
+  <audio id="bgMusic" loop autoplay>
+    <source src="audio/terra_theme.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!--<button onclick="document.getElementById('bgMusic').play()">Play Music</button>-->
+
+  <button id="botonArriba">▲</button>
+
+  <div class="footer">
+    <h2>ESAT</h2>
+    <h3>Educational page made for school</h3>
+    <a href="CV/apl_cv.htm" class="linkcv" target="_blank" title="MyCV"><i>Adam Puche Lioubavina</i></a>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const gallery = document.querySelector(".gallery");
+        const prevBtn = document.getElementById("prevBtn");
+        const nextBtn = document.getElementById("nextBtn");
+        let scrollAmount = 100; // Ajusta la cantidad de desplazamiento
+
+        nextBtn.addEventListener("click", () => {
+            gallery.scrollBy({ left: scrollAmount, behavior: "smooth" });
+        });
+
+        prevBtn.addEventListener("click", () => {
+            gallery.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+        });
+    });
+    document.addEventListener("DOMContentLoaded", function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.menu');
+
+      menuToggle.addEventListener('click', function() {
+        menu.classList.toggle('active');
+      });
+    });
+    document.addEventListener("DOMContentLoaded", function() {
+      let botonArriba = document.getElementById("botonArriba");
+
+      window.addEventListener("scroll", function() {
+        if (document.documentElement.scrollTop > 100) {
+          botonArriba.style.display = "block";
+        } else {
+          botonArriba.style.display = "none";
         }
-      }
-    </style>
-  </head>
-  <body>
-    <!-- Se necesita el favicon -->
-    <div class="header">
-      <h2>FINAL FANTASY VI</h2>
-    </div>
-    <div class="navigation">
-      <div><a href="#hist"> history </a></div>
-      <div><a href="#char"> characters </a></div>
-      <div><a href="#ene"> enemies </a></div>
-      <div><a href="#mode7"> mode 7 </a></div>
-    </div>
-    <div>
-      <h2>WHAT IS FINAL FANTASY</h2>
-      <p>
-        Final Fantasy is a video game that was developed by Square. The first Final Fantasy had launched in
-        december 18th of 1987
-      </p>
-    </div>
-    <div class="">
-      <a name="hist"></a>
-      <h2>HISTORY</h2>
-      <p>
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text 
-        ever since the 1500s, when an unknown printer took a galley of 
-        type and scrambled it to make a type specimen book. It has survived 
-        not only five centuries, but also the leap into electronic typesetting, 
-        remaining essentially unchanged. It was popularised in the 1960s with the 
-        release of Letraset sheets containing Lorem Ipsum passages, and more 
-        recently with desktop publishing software like Aldus PageMaker including 
-        versions of Lorem Ipsum.
-      </p>  
-    </div>
-    <div class="">
-      <a name="char"></a>
-      <h2>CHARACTERS</h2>
-      <p>
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text 
-        ever since the 1500s, when an unknown printer took a galley of 
-        type and scrambled it to make a type specimen book. It has survived 
-        not only five centuries, but also the leap into electronic typesetting, 
-        remaining essentially unchanged. It was popularised in the 1960s with the 
-        release of Letraset sheets containing Lorem Ipsum passages, and more 
-        recently with desktop publishing software like Aldus PageMaker including 
-        versions of Lorem Ipsum.
-      </p>  
-    </div>
-    <div class="">
-      <a name="ene"></a>
-      <h2>ENEMIES</h2>
-      <p>
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text 
-        ever since the 1500s, when an unknown printer took a galley of 
-        type and scrambled it to make a type specimen book. It has survived 
-        not only five centuries, but also the leap into electronic typesetting, 
-        remaining essentially unchanged. It was popularised in the 1960s with the 
-        release of Letraset sheets containing Lorem Ipsum passages, and more 
-        recently with desktop publishing software like Aldus PageMaker including 
-        versions of Lorem Ipsum.
-      </p>  
-    </div>
-    <div class="">
-      <a name="mode7"></a>
-      <h2>MODE 7</h2>
-      <p>
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text 
-        ever since the 1500s, when an unknown printer took a galley of 
-        type and scrambled it to make a type specimen book. It has survived 
-        not only five centuries, but also the leap into electronic typesetting, 
-        remaining essentially unchanged. It was popularised in the 1960s with the 
-        release of Letraset sheets containing Lorem Ipsum passages, and more 
-        recently with desktop publishing software like Aldus PageMaker including 
-        versions of Lorem Ipsum.
-      </p>  
-    </div>
-    <div class="footer"> 
-      <h2> ESAT </h2>
-      <h3>educational page made for school</h3>
-      <!-- This button will be the link to my cv -->
-      <!-- I will change it for put a button that I thinks is great with the page--> 
-      <a href="CV/apl_cv.htm" class="linkcv" target="_blanck" title="MyCV"><i>Adam Puche Lioubavina</i></a>
-    </div>
-  </body>
+      });
+
+      botonArriba.addEventListener("click", function() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    });
+  </script>
+
+</body>
 </html>
