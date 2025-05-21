@@ -483,6 +483,115 @@
     .tech-details li {
       margin-bottom: 5px;
     }
+  .legal-form {
+    background: rgba(20, 15, 35, 0.9);
+    padding: 20px;
+    margin-top: 20px;
+    border-top: 2px solid #6b4b8a;
+  }
+  
+  .legal-form h3 {
+    color: #d4af37;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #c0b0e0;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    background: rgba(30, 20, 50, 0.7);
+    border: 1px solid #6b4b8a;
+    border-radius: 5px;
+    color: #f0f0f0;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .legal-checkbox {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .legal-checkbox input {
+    margin-right: 10px;
+  }
+  
+  .legal-link {
+    color: #d4af37;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  /* Estilos para el modal legal */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background: linear-gradient(145deg, #1a1a3a 0%, #0d0d21 100%);
+    border: 2px solid #8a6bb4;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 0;
+    animation: fadeIn 0.3s ease-out;
+  }
+  
+  .modal-header {
+    background: linear-gradient(to right, #4a2d6b, #6b4b8a);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .modal-header h3 {
+    margin: 0;
+    color: #f8e8b0;
+  }
+  
+  .close-modal {
+    color: #e0e0e0;
+    font-size: 28px;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+  
+  .close-modal:hover {
+    color: #ff6b6b;
+  }
+  
+  .modal-body {
+    padding: 20px;
+    color: #f0f0f0;
+  }
+  
+  .modal-body p {
+    margin-bottom: 15px;
+    line-height: 1.5;
+  }
 
     /* Responsive Design */
     @media (max-width: 768px) {
@@ -803,6 +912,53 @@
     <h2>FINAL FANTASY VI FAN PAGE</h2>
     <h3>Educational project about the classic RPG</h3>
     <a href="CV/apl_cv.htm" class="linkcv" target="_blank" title="MyCV"><i>Adam Puche Lioubavina</i></a>
+
+  
+
+    <div class="legal-form">
+      <h3>CONTACTO</h3>
+      <form id="contactForm" action="mailto:tucorreo@example.com" method="post" enctype="text/plain">
+        <div class="form-group">
+          <label for="name">Nombre:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="message">Mensaje:</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+        
+        <div class="legal-checkbox">
+          <input type="checkbox" id="legalAccept" name="legalAccept" required>
+          <label for="legalAccept">Acepto la <a href="#legalModal" class="legal-link">política de privacidad</a> y términos legales</label>
+        </div>
+        
+        <button type="submit" class="buttonPlay">ENVIAR</button>
+      </form>
+    </div>
+
+    <!-- Modal de Política Legal (oculto por defecto) -->
+    <div id="legalModal" class="modal-overlay">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Política de Privacidad y Términos Legales</h3>
+          <span class="close-modal">&times;</span>
+        </div>
+        <div class="modal-body">
+          <p><strong>1. Responsable:</strong> Adam Puche Lioubavina (proyecto educativo sin fines comerciales).</p>
+          <p><strong>2. Finalidad:</strong> Los datos recogidos solo se usarán para responder consultas.</p>
+          <p><strong>3. Legitimación:</strong> Consentimiento del interesado al enviar el formulario.</p>
+          <p><strong>4. Destinatarios:</strong> No se cederán datos a terceros.</p>
+          <p><strong>5. Derechos:</strong> Puedes solicitar acceso, rectificación o eliminación de tus datos.</p>
+          <p><strong>6. Cookies:</strong> Esta web solo usa cookies técnicas necesarias.</p>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script>
@@ -1255,6 +1411,41 @@
         if (e.target === popupOverlay) {
           popupOverlay.style.display = 'none';
           document.body.style.overflow = 'auto';
+        }
+      });
+    });
+    // Mostrar/ocultar modal legal
+    document.addEventListener("DOMContentLoaded", function() {
+      const legalLinks = document.querySelectorAll('.legal-link');
+      const legalModal = document.getElementById('legalModal');
+      const closeModal = document.querySelector('.close-modal');
+      
+      legalLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          legalModal.style.display = 'flex';
+          document.body.style.overflow = 'hidden';
+        });
+      });
+      
+      closeModal.addEventListener('click', function() {
+        legalModal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+      });
+      
+      legalModal.addEventListener('click', function(e) {
+        if (e.target === legalModal) {
+          legalModal.style.display = 'none';
+          document.body.style.overflow = 'auto';
+        }
+      });
+      
+      // Validación básica del formulario
+      const contactForm = document.getElementById('contactForm');
+      contactForm.addEventListener('submit', function(e) {
+        if (!document.getElementById('legalAccept').checked) {
+          e.preventDefault();
+          alert('Debes aceptar la política de privacidad para enviar el mensaje.');
         }
       });
     });
